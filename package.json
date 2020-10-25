@@ -1,0 +1,26 @@
+{
+  "name": "spacex-api.js",
+  "version": "1.0.0",
+  "description": "SpaceX API library",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkiaCode/node-spacex-api.git"
+  },
+  "keywords": [
+    "spacex",
+    "api"
+  ],
+  "author": "catry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AkiaCode/node-spacex-api/issues"
+  },
+  "homepage": "https://github.com/AkiaCode/node-spacex-api#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
