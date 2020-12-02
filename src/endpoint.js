@@ -1,7 +1,6 @@
 const fetch = require('node-fetch')
 const baseUrl = "https://api.spacexdata.com/v4/"
 
-
 module.exports = {
     async get (endpoint) {
         return await fetch(baseUrl + endpoint , { method: 'GET' }).then(res => res.json())

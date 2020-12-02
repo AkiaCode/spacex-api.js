@@ -1,7 +1,6 @@
-const { get } = require('http')
 const endpoint  = require('./endpoint')
 
-module.exports = class spacexApi {
+module.exports = class SpaceX_API {
     capsules (capsule_id = undefined, query = undefined) {
         if (capsule_id != undefined) {
             return endpoint.getID('capsules', capsule_id)
@@ -26,12 +25,11 @@ module.exports = class spacexApi {
     }
     launches (schedule = undefined, launches_id = undefined, query = undefined) {
         if (schedule != undefined) {
-            schedule = ['past', 'upcomming', 'latest', 'next']
-            for (list in schedule) {
-                return endpoint.get(`launches/${list}`)
-            }
-        }
-        else if (launches_id != undefined) {
+                schedule = ['past', 'upcomming', 'latest', 'next']
+                for (let list in schedule) {
+                    return endpoint.get(`launches/${list}`)
+                }
+        } else if (launches_id != undefined) {
             return endpoint.getID('launches', launches_id)
         } else if (query != undefined) {
             return endpoint.post('launches', query)
@@ -75,5 +73,4 @@ module.exports = class spacexApi {
             return endpoint.post('starlink', query)
         } else { return endpoint.get('starlink') }
     }
-    constructor() {}
 }
